@@ -7,13 +7,14 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { baseUrl } from '@/api-endpoints/ApiUrls';
 import { useVendor } from '@/context/VendorContext';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const router = useRouter();
   const { vendorId } = useVendor();
   const [banners, setBanners] = useState<any[]>([]);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
-console.log(vendorId)
+
   // Fetch banners
   const bannerGetApi = async () => {
     try {
@@ -74,18 +75,33 @@ console.log(vendorId)
   };
 
   return (
+    // <div className="z-10 md:h-[70vh] rounded-lg md:px-10 md:py-4">
+    //   <Slider {...settings}>
+    //     {filteredBanners.map((banner, index) => (
+    //       <div
+    //         key={banner.id}
+    //         onClick={() => handleBannerClick(banner)}
+    //         className="cursor-pointer"
+    //       >
+    //         <img
+    //           className="md:rounded-lg md:object-cover w-full h-[70vh] md:h-auto"
+    //           src={banner.image_url}
+    //           alt={banner.title || 'banner'}
+    //         />
+    //       </div>
+    //     ))}
+    //   </Slider>
+    // </div>
     <div className="z-10 md:h-[70vh] rounded-lg md:px-10 md:py-4">
       <Slider {...settings}>
-        {filteredBanners.map((banner, index) => (
-          <div
-            key={banner.id}
-            onClick={() => handleBannerClick(banner)}
-            className="cursor-pointer"
-          >
-            <img
-              className="md:rounded-lg md:object-cover w-full h-[70vh] md:h-auto"
+        {filteredBanners.map((banner) => (
+          <div key={banner.id} className="cursor-pointer">
+            <Image
               src={banner.image_url}
-              alt={banner.title || 'banner'}
+              alt={banner.title || "Banner"}
+              width={2000}
+              height={800}
+              className="w-full h-[70vh] md:rounded-lg object-cover"
             />
           </div>
         ))}
