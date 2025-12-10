@@ -103,7 +103,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 queryClient.invalidateQueries(['getProductData'] as InvalidateQueryFilters);
             }
         } catch (error) {
-            setSignInModal(true)
+            // console.log(error?.response?.data?.non_field_errors?.[0] || 'Something went wrong!');
+            toast.error(error?.response?.data?.non_field_errors?.[0] || 'Something went wrong!');
+            // setSignInModal(true)
             console.log(error)
         }
     }
@@ -225,8 +227,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     {product?.isLike === true ? (
                         <button
                             onClick={(e) => {
-                                e.stopPropagation(); // 🛑 Prevent parent click
-                                handleDeleteWishList();
+                                if (getUserId) {
+                                    e.stopPropagation();
+                                    handleDeleteWishList();
+                                } else {
+                                    setSignInModal(true);
+                                }
                             }}
                             className="absolute bottom-1.5 right-4 md:right-1/2 md:opacity-0 md:group-hover:opacity-100 opacity-100 md:group-hover:translate-x-20 md:translate-x-0 w-10 h-10 md:w-12 md:h-12 bg-red-500 text-white border-[3px] border-white rounded-full flex items-center justify-center shadow hover:bg-[#991b1b] hover:text-white transition-all duration-500 z-9999"
                         >
@@ -236,8 +242,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         <button
                             // onClick={onWishlist}
                             onClick={(e) => {
-                                e.stopPropagation(); // 🛑 Prevent parent click
-                                handleWishList();
+                                if (getUserId) {
+                                    e.stopPropagation();
+                                    handleWishList();
+                                } else {
+                                    setSignInModal(true);
+                                }
                             }}
                             className="absolute bottom-1.5 right-4 md:right-1/2 md:opacity-0 md:group-hover:opacity-100 opacity-100 md:group-hover:translate-x-20 md:translate-x-0 w-10 h-10 md:w-12 md:h-12 bg-gray-200  border-[3px] border-white rounded-full flex items-center justify-center shadow hover:bg-[#991b1b] hover:text-white transition-all duration-500 z-9999"
                         >

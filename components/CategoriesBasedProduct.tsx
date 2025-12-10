@@ -182,11 +182,14 @@ export default function CategoriesBasedProduct() {
                         </div>
                     ) : paginatedItems?.length > 0 ? (
                         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                            {paginatedItems.map((product: any, idx: number) => (
+                            {/* {paginatedItems.map((product: any, idx: number) => ( */}
+                               {paginatedItems
+                                    .filter((product: any) => !product?.subcategory || product?.subcategory === "") // ⛔ subcategory iruntha skip
+                                    .map((product: any, idx: number) => (
                                 <div
                                     key={idx}
                                     className=""
-                                    onClick={() => router.push(`/shop/${(product?.name)}`)}
+                                    onClick={() => router.push(`/shop/${(product?.slug_name)}`)}
                                 >
                                     <ProductCard
                                         image={product?.image_urls[0] || ''}
@@ -194,7 +197,7 @@ export default function CategoriesBasedProduct() {
                                         title={product?.name}
                                         price={product?.price}
                                         onAddToCart={() => alert(`Add to cart: ${product?.name}`)}
-                                        onView={() => router.push(`/shop/${(product.name)}`)}
+                                        onView={() => router.push(`/shop/${(product.slug_name)}`)}
                                         onWishlist={() => alert(`Wishlist: ${product?.name}`)}
                                         product={product}
                                     />

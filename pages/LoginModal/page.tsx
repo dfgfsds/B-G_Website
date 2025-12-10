@@ -188,7 +188,6 @@ function LoginModal({ open, handleClose, vendorId }: any) {
           </button>
         </div>
 
-
         <form
           onSubmit={handleSubmit(isOtpMode ? (otpSent ? handleVerifyOtp : handleSendOtp) : handleEmailLogin)}
           className="space-y-6"

@@ -21,7 +21,7 @@ export default function SubCategoryProducts() {
     const findSubCategoryProduct = products?.data?.filter(
         (item: any) => item?.subcategory_name === subId
     );
-
+console.log("findSubCategoryProduct", findSubCategoryProduct,subId,products?.data);
 
     const filteredProducts = Array.isArray(findSubCategoryProduct) ? findSubCategoryProduct : [];
     const matchingProductsArray = filteredProducts?.map((product: any, index: number) => {
@@ -89,7 +89,7 @@ export default function SubCategoryProducts() {
                                     title={product?.name}
                                     price={product?.price}
                                     onAddToCart={() => alert(`Add to cart: ${product?.name}`)}
-                                    onView={() => router.push(`/shop/${(product?.slug_name)}`)}
+                                    // onView={() => router.push(`/shop/${(product?.slug_name)}`)}
                                     onWishlist={() => alert(`Wishlist: ${product?.name}`)}
                                     product={product}
                                 />
