@@ -53,7 +53,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "**",    // OPTIONAL: any domain allowed
+        hostname: "**",    
       }
     ],
   },
