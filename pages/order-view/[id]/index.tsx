@@ -261,13 +261,22 @@ function OrderSingleView() {
                                     <div key={item.id} className="mb-6">
                                         {/* Product Card */}
                                         <div className="flex gap-4 bg-white border border-gray-200 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                                            <Image
+                                            {/* <Image
                                                 src={item?.product?.image_urls?.[0]}
                                                 className="h-24 w-24 object-cover rounded-lg border"
                                                 alt="product"
                                                 width={100}
                                                 height={100}
+                                            /> */}
+
+                                            <img
+                                                src={item?.product?.image_urls?.[0]}
+                                                alt="product"
+                                                width={100}
+                                                height={100}
+                                                className="h-24 w-24 object-cover rounded-lg border"
                                             />
+
                                             <div className="flex flex-col justify-between w-full">
                                                 <div>
                                                     <h4
