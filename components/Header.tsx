@@ -116,7 +116,7 @@ const Header: React.FC = () => {
                     <Link href="/">
                         <Image
                             src={logo}
-                            alt="Omsritara Logo"
+                            alt="B&G Logo"
                             className="w-24 h-auto md:w-24"
                             priority
                         />
@@ -349,7 +349,7 @@ const Header: React.FC = () => {
                             {/* Logo */}
                             <Image
                                 src={logo}
-                                alt="Omsritara Logo"
+                                alt="B&G Logo"
                                 height={90}
                                 width={90}
                                 className="w-32 h-auto mb-4"

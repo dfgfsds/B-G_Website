@@ -28,11 +28,20 @@ export default function ShopByIntentionPage() {
                         >
                             {/* Background Image */}
                             <div className="aspect-[4/3] w-full overflow-hidden">
-                                {category?.image && (
+                                {/* {category?.image && (
                                     <Image
                                         src={category?.image || 'https://semantic-ui.com/images/wireframe/image.png'}
                                         alt={category?.name || 'Category'}
                                         className="h-full w-full object-cover  transition-transform duration-500"
+                                        width={300}
+                                        height={288}
+                                    />
+                                )} */}
+                                {category?.image && (
+                                    <img
+                                        src={category?.image || 'https://semantic-ui.com/images/wireframe/image.png'}
+                                        alt={category?.name || 'Category'}
+                                        className="h-full w-full object-cover transition-transform duration-500"
                                         width={300}
                                         height={288}
                                     />

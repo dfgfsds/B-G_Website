@@ -388,13 +388,21 @@ const QuickSearch: React.FC<Props> = ({ products, label = 'Search...', defaultOp
                                     role="option"
                                 >
                                     {item.image_urls?.[0] && (
-                                        <Image
+                                        // <Image
+                                        //     src={item.image_urls[0]}
+                                        //     alt={item.name}
+                                        //     width={50}
+                                        //     height={50}
+                                        //     className="rounded-md object-cover border"
+                                        // />
+                                        <img
                                             src={item.image_urls[0]}
                                             alt={item.name}
-                                            width={50}
-                                            height={50}
                                             className="rounded-md object-cover border"
+                                            width="50"
+                                            height="50"
                                         />
+
                                     )}
 
                                     <div>
