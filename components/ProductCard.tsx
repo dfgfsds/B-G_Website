@@ -157,8 +157,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         </span>
                     )}
                     <div className="relative overflow-hidden">
-                        {/* Base Image */}
-                        {image && (
+                        Base Image
+                        {/* {image && (
                             <Image
                                 src={image}
                                 alt={title}
@@ -166,10 +166,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                 height={400}
                                 className="object-fill w-full  mx-auto  transition-opacity duration-500 md:group-hover:opacity-0 rounded-md"
                             />
-                        )}
+                        )} */}
 
                         {/* Hover Image Sliding In */}
-                        {hoverImage && (
+                        {/* {hoverImage && (
                             <Image
                                 src={hoverImage}
                                 alt={`${title} - hover`}
@@ -179,7 +179,31 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                 className="object-fill w-full  mx-auto absolute top-0 left-0 transform translate-x-full md:group-hover:translate-x-0 transition-transform duration-500 ease-in-out rounded-md"
 
                             />
+                        )} */}
+
+                        {/* Base Image */}
+                        {image && (
+                            <img
+                                src={image}
+                                alt={title}
+                                width={300}
+                                height={400}
+                                className="object-fill w-full mx-auto transition-opacity duration-500 md:group-hover:opacity-0 rounded-md"
+                            />
                         )}
+
+                        {/* Hover Image Sliding In */}
+                        {hoverImage && (
+                            <img
+                                src={hoverImage}
+                                alt={`${title} - hover`}
+                                width={300}
+                                height={400}
+                                className="object-fill w-full mx-auto absolute top-0 left-0 transform translate-x-full md:group-hover:translate-x-0 transition-transform duration-500 ease-in-out rounded-md"
+                            />
+                        )}
+
+
                     </div>
 
                     {product?.cartId ? (

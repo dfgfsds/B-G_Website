@@ -96,13 +96,21 @@ export default function HeroSection() {
       <Slider {...settings}>
         {filteredBanners.map((banner) => (
           <div key={banner.id} className="cursor-pointer">
-            <Image
+            {/* <Image
+              src={banner.image_url}
+              alt={banner.title || "Banner"}
+              width={2000}
+              height={800}
+              className="w-full h-[70vh] md:rounded-lg object-cover"
+            /> */}
+            <img
               src={banner.image_url}
               alt={banner.title || "Banner"}
               width={2000}
               height={800}
               className="w-full h-[70vh] md:rounded-lg object-cover"
             />
+
           </div>
         ))}
       </Slider>

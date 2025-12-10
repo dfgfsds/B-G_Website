@@ -86,7 +86,7 @@ export default function ProfileOrders() {
                   {order?.order_items?.map((product: any) => (
                     <div key={product.id} className="flex items-center gap-4">
                       <div className="w-16 h-16 bg-[#F8F7F2] rounded-md overflow-hidden flex-shrink-0">
-                        {product?.product?.image_urls?.[0] && (
+                        {/* {product?.product?.image_urls?.[0] && (
                           <Image
                             src={product.product?.image_urls?.[0] || "https://semantic-ui.com/images/wireframe/image.png"}
                             alt={product.name}
@@ -94,7 +94,18 @@ export default function ProfileOrders() {
                             height={100}
                             width={100}
                           />
+                        )} */}
+
+                        {product?.product?.image_urls?.[0] && (
+                          <img
+                            src={product.product?.image_urls?.[0] || "https://semantic-ui.com/images/wireframe/image.png"}
+                            alt={product.name}
+                            className="w-full h-full object-cover"
+                            width={100}
+                            height={100}
+                          />
                         )}
+
 
                       </div>
 
