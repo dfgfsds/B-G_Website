@@ -341,16 +341,16 @@ export default function Shop() {
                             {finalProductData.map((product, idx) => (
                                 <div
                                     key={idx}
-                                    onClick={() => router.push(`/shop/${slugConvert(product?.name)}`)}
+                                    onClick={() => router.push(`/shop/${(product?.slug_name)}`)}
                                 >
                                     <ProductCard
                                         image={product?.image_urls[0] || ''}
                                         hoverImage={product?.image_urls?.[1] || product?.image_urls?.[0]}
                                         title={product?.name}
                                         price={product?.price}
-                                        onAddToCart={() => alert(`Add to cart: ${product?.name}`)}
-                                        onView={() => router.push(`/shop/${slugConvert(product?.name)}`)}
-                                        onWishlist={() => alert(`Wishlist: ${product?.name}`)}
+                                        onAddToCart={() => alert(`Add to cart: ${product?.slug_name}`)}
+                                        onView={() => router.push(`/shop/${(product?.slug_name)}`)}
+                                        onWishlist={() => alert(`Wishlist: ${product?.slug_name}`)}
                                         product={product}
                                     />
                                 </div>
