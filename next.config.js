@@ -30,32 +30,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "ecomapi.ftdigitalsolutions.org",
-      },
-      {
-        protocol: "https",
-        hostname: "www.reikicrystalproducts.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.shopify.com",
-      },
-      {
-        protocol: "https",
-        hostname: "semantic-ui.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn-icons-png.flaticon.com",
-      },
-      {
-        protocol: "https",
-        hostname: "**",    
-      }
-    ],
+    unoptimized: true,
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "ecomapi.ftdigitalsolutions.org",
+    //   },
+    //   {
+    //     protocol: "https",
+    //     hostname: "www.reikicrystalproducts.com",
+    //   },
+    //   {
+    //     protocol: "https",
+    //     hostname: "cdn.shopify.com",
+    //   },
+    //   {
+    //     protocol: "https",
+    //     hostname: "semantic-ui.com",
+    //   },
+    //   {
+    //     protocol: "https",
+    //     hostname: "cdn-icons-png.flaticon.com",
+    //   },
+    //   {
+    //     protocol: "https",
+    //     hostname: "**",    
+    //   }
+    // ],
   },
 
   async rewrites() {
