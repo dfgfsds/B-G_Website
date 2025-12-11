@@ -28,20 +28,20 @@ const BlogAllPages: React.FC<{ blogs: any[] }> = ({ blogs }) => {
                                     {/* Image Section */}
                                     <div className="relative h-56 w-full hover:scale-105 transition-transform duration-300">
                                         {post?.banner_url && (
-                                            // <Image
-                                            //     src={post.banner_url}
-                                            //     alt={post.title}
-                                            //     fill
-                                            //     className="object-cover"
-                                            // />
-                                            <img
-                                                src={post.banner_url?.startsWith("http")
-                                                    ? post.banner_url
-                                                    : ``
-                                                }
+                                            <Image
+                                                src={post.banner_url}
                                                 alt={post.title}
-                                                className="object-cover w-full h-full absolute inset-0"
+                                                fill
+                                                className="object-cover"
                                             />
+                                            // <img
+                                            //     src={post.banner_url?.startsWith("http")
+                                            //         ? post.banner_url
+                                            //         : ``
+                                            //     }
+                                            //     alt={post.title}
+                                            //     className="object-cover w-full h-full absolute inset-0"
+                                            // />
 
                                         )}
 

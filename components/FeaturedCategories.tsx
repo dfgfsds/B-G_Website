@@ -143,7 +143,7 @@ const FeaturedCategories = () => {
   const skeletonItems = new Array(6).fill(null)
 
   return (
-    <section className="mt-12">
+    <section className="mt-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* ---- Header ---- */}
         <div className="flex  items-center justify-between mb-6">
@@ -178,21 +178,21 @@ const FeaturedCategories = () => {
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="w-40 h-40 overflow-hidden rounded-full shadow-md">
-                      {/* <Image
+                      <Image
                         src={category.image}
                         alt={category.name}
                         width={160}
                         height={160}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      /> */}
+                      />
 
-                      <img
+                      {/* <img
                         src={category?.image}
                         alt={category?.name}
                         width={160}
                         height={160}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      />
+                      /> */}
                     </div>
                     <div className="mt-4">
                       <h3

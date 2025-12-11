@@ -59,18 +59,7 @@ export default function CartItem({ product, quantity: initialQuantity }: CartIte
     <div className="flex flex-col sm:flex-row gap-4 pb-6 border-b border-border last:border-0 last:pb-0">
       <div className="w-full sm:w-24 h-24 bg-white rounded-md overflow-hidden flex-shrink-0">
 
-        {/* <Image
-          src={
-            product?.image_urls?.[0] ||
-            product?.product_variant_image_urls?.[0] ||
-            "https://semantic-ui.com/images/wireframe/image.png"
-          }
-          alt={product.name}
-          className="w-full h-full object-cover"
-          width={100}
-          height={100}
-        /> */}
-        <img
+        <Image
           src={
             product?.image_urls?.[0] ||
             product?.product_variant_image_urls?.[0] ||
@@ -81,6 +70,17 @@ export default function CartItem({ product, quantity: initialQuantity }: CartIte
           width={100}
           height={100}
         />
+        {/* <img
+          src={
+            product?.image_urls?.[0] ||
+            product?.product_variant_image_urls?.[0] ||
+            "https://semantic-ui.com/images/wireframe/image.png"
+          }
+          alt={product.name}
+          className="w-full h-full object-cover"
+          width={100}
+          height={100}
+        /> */}
 
 
       </div>

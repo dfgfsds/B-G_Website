@@ -236,7 +236,7 @@ const NewArrivals: React.FC = () => {
 
   return (
     <section
-      className="py-12 mt-20 relative"
+      className="py-12 mt-12 relative"
       style={{
         backgroundImage: `url(${bg.src})`,
         backgroundSize: 'contain',

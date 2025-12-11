@@ -61,7 +61,7 @@ const Certificates = () => {
           {summerImages.map((item, index) => (
             <div key={index} className="px-3">
               <div className="flex justify-center items-center">
-                {/* {item?.src && (
+                {item?.src && (
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -69,9 +69,9 @@ const Certificates = () => {
                     height={120}
                     className="object-contain hover:scale-105 transition-transform h:32"
                   />
-                )} */}
+                )}
 
-                {item?.src && (
+                {/* {item?.src && (
                   <img
                     src={
                       item.src?.startsWith("http")
@@ -83,7 +83,7 @@ const Certificates = () => {
                     height="120"
                     className="object-contain hover:scale-105 transition-transform h:32"
                   />
-                )}
+                )} */}
 
 
               </div>
