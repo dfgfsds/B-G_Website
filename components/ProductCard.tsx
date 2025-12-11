@@ -305,12 +305,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
                         {/* Primary Image */}
                         {image && (
-                            <img
+                            <Image
                                 src={image}
                                 alt={title}
                                 width={300}
                                 height={400}
-                                // FIX APPLIED: object-cover and h-full ensure consistent image size within the parent div.
                                 className="object-cover w-full h-full mx-auto transition-opacity duration-500 md:group-hover:opacity-0 rounded-md"
                             />
                         )}
@@ -318,12 +317,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
                         {/* Hover Image */}
                         {hoverImage && (
-                            <img
+                            <Image
                                 src={hoverImage}
                                 alt={`${title} - hover`}
                                 width={300}
                                 height={400}
-                                // FIX APPLIED: object-cover and h-full ensure consistent image size within the parent div.
                                 className="object-cover w-full h-full mx-auto absolute top-0 left-0 transform translate-x-full md:group-hover:translate-x-0 transition-transform duration-500 ease-in-out rounded-md"
                             />
                         )}
