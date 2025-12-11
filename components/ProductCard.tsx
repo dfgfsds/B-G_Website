@@ -301,9 +301,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         </span>
                     )}
                     <div className="relative overflow-hidden w-full h-full">
-                        {/* Added w-full h-full here to ensure the inner container also takes full height */}
-
-                        {/* Primary Image */}
                         {image && (
                             <Image
                                 src={image}
@@ -315,7 +312,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         )}
 
 
-                        {/* Hover Image */}
                         {hoverImage && (
                             <Image
                                 src={hoverImage}
@@ -328,7 +324,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
                     </div>
 
-                    {/* Cart Button (Check/Add) */}
                     {product?.cartId ? (
                         <button
                             onClick={(e) => {
@@ -359,8 +354,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         </button>
                     )}
 
-
-                    {/* View Button */}
                     <button
                         onClick={onView}
                         className="absolute bottom-1.5 left-1/2 md:opacity-0 md:group-hover:opacity-100 opacity-100 -translate-x-16 md:group-hover:-translate-x-20 md:translate-x-0 w-10 md:w-12 h-10 md:h-12 bg-gray-200 border-[3px] border-white rounded-full flex items-center justify-center shadow hover:bg-[#991b1b] hover:text-white transition-all duration-500 z-10"
@@ -368,7 +361,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         <Eye size={20} />
                     </button>
 
-                    {/* Wishlist Button (Like/Unlike) */}
                     {product?.isLike === true ? (
                         <button
                             onClick={(e) => {
