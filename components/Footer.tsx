@@ -42,13 +42,16 @@ const Footer = () => {
     const handleSubmit = async (e: any) => {
         e.preventDefault()
         try {
-            await axios.post(`${baseUrl}/testimonial/`, { ...form, vendor: vendorId, verified_status: false, created_by: user?.data?.name ? user?.data?.name : 'user', user: getUserId })
-            setSubmitted(true)
-            setTimeout(() => {
-                setIsModalOpen(false)
-                setForm({ title: '', description: '' })
-                setSubmitted(false)
-            }, 1500)
+            const updatedApi = await axios.post(`${baseUrl}/testimonial/`, { ...form, vendor: vendorId, verified_status: false, created_by: user?.data?.name ? user?.data?.name : 'user', user: getUserId })
+            if (updatedApi) {
+                setSubmitted(true)
+                testimonialGetApi();
+                setTimeout(() => {
+                    setIsModalOpen(false)
+                    setForm({ title: '', description: '' })
+                    setSubmitted(false)
+                }, 1500)
+            }
         } catch (err) {
             console.error(err)
             alert('Error submitting testimonial')
@@ -74,28 +77,28 @@ const Footer = () => {
 
     return (
         <>
+            {!testimonialData?.length && (
+                <section className="bg-white py-16 px-6 md:px-12 lg:px-20">
+                    <div className="max-w-7xl mx-auto text-center">
+                        <h2 className="text-3xl font-bold text-yellow-500 mb-4">What Our Customers Say!</h2>
+                        <p className="text-gray-600 mb-8">
+                            We love to hear from our customers. Share your experience with us!
+                        </p>
 
-            <section className="bg-white py-16 px-6 md:px-12 lg:px-20">
-                <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold text-yellow-500 mb-4">What Our Customers Say!</h2>
-                    <p className="text-gray-600 mb-8">
-                        We love to hear from our customers. Share your experience with us!
-                    </p>
-
-                    <button
-                        onClick={() => {
-                            getUserId ?
-                                setIsModalOpen(true)
-                                :
-                                router.push('/login');
-                        }}
-                        className="px-6 py-3 bg-yellow-500 text-white font-medium rounded-lg hover:bg-yellow-300 transition mb-6"
-                    >
-                        Write a Testimonial
-                    </button>
-                </div>
-            </section>
-
+                        <button
+                            onClick={() => {
+                                getUserId ?
+                                    setIsModalOpen(true)
+                                    :
+                                    router.push('/login');
+                            }}
+                            className="px-6 py-3 bg-yellow-500 text-white font-medium rounded-lg hover:bg-yellow-300 transition mb-6"
+                        >
+                            Write a Testimonial
+                        </button>
+                    </div>
+                </section>
+            )}
             <footer className="bg-yellow-500 text-white px-6 lg:px-20 py-12 text-sm">
                 {/* <footer className="bg-[#222222] text-gray-400 px-6 lg:px-20 py-12 text-sm"> */}
                 {/* Top Grid */}
@@ -157,11 +160,11 @@ const Footer = () => {
                     <div>
                         <h3 className="font-semibold mb-4 uppercase">Where to Contact Us</h3>
                         <ul className="space-y-2">
-                                  {data?.support_email &&(
-                            <li>
-                                <a href="mailto:babukumaraswamy837@gmail.com" className="text-purple-700">{data?.support_email}</a>
-                            </li>
-                                  )}
+                            {data?.support_email && (
+                                <li>
+                                    <a href="mailto:babukumaraswamy837@gmail.com" className="text-purple-700">{data?.support_email}</a>
+                                </li>
+                            )}
                             {data?.support_contact && (
                                 <li>
                                     Ph No: <a href="tel:+919342934087" className="text-purple-700">{data?.support_contact}</a>
